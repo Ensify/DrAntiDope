@@ -10,14 +10,20 @@ body{
 }
 
 .navbar{
-    background: white;
-    padding: 1em;
+    position: sticky;
+    top:0;
+    margin-left: 2em;
+    display: inline;
 
 
     .logo-text{
+
+        font-size: 1.5em;
         text-decoration:none;
         font-weight: bold;
         color: black;
+        text-align: left;
+        padding-top: 0.3em;
         span{
             color:var(--secondary-color);
         }
@@ -25,20 +31,44 @@ body{
     .container{
         display: flex;
         place-content: space-between;
+        background: white;
     }
-    nav{
-        ul{
-            display: inline;
-            list-style: none;
-            li{ 
-                float: left;
-                padding: 1em;
 
-                a{
-                    text-decoration: none;
-                    display:block;
-                }
+    nav{
+        display: inline;
+        ul {
+            display: inline;
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+          }
+        .primary-nav{
+            li{
+                float:left;
             }
+        }  
+        li {
+            color: black;
+            float: left;
         }
+        .secondary-nav{
+              display: inline;
+              float:right;
+        }
+        li a {
+            display: block;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            color: black;
+        }
+          
     }
+}
+
+img.hero-img{
+    max-width: 100%;
+    margin:auto;
+    object-fit: fill;
 }
