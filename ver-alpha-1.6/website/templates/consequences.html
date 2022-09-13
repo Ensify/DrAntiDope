@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% set active_page ='aware' %}
+
+{% block content%}
+
+<div class="container mt-4">
+
+    <!-- TO DO!!!!!!!! VERY IMPORTANT KINDLY SEE THIS centre. sticky, go to top -->
+    <form>
+        <input type="text" id="search" class="st-search-input search-field"/>
+        <button type="button" onclick='javascript: window.find(document.getElementById("search").value);'>Submit</button>
+    </form>
+
+    
+</div>
+
+<div class="container p-3 shadow">
+    <div class="table-responsive rounded">
+        <table class="table table-hover align-middle">
+            <thead class="table-dark">
+              <tr>
+                {% for elem in head %}
+                <th scope="col">{{elem}}</th>
+                {% endfor %}
+              </tr>
+            </thead>
+            <tbody>
+                {% for record in records %}
+                    <tr>
+                        <th scope="row">{{record[0]}}</th>
+                        {% for elem in record[1:] %}
+                            <td>
+                                {{elem}}
+                            </td>
+                        {% endfor %}
+                    </tr>
+
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    <div class="row p-3">
+        <a class= " text-decoration-none rounded shadow text-white bg-dark" href="#">Go to Top </a>
+    </div>
+</div>
+
+{%endblock%}

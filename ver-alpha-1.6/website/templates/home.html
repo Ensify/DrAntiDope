@@ -1,0 +1,238 @@
+{% extends "base.html" %}
+{% set active_page ='home' %}
+
+{% block css%}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../static/css/style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tw-elements/dist/css/index.min.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<title>Home</title>
+<script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
+<link rel="stylesheet" href="{{url_for('static',filename='style.css')}}">
+{%endblock%}
+
+{% block content%}
+<main>
+
+<div class="container text-center">
+    <div class="row">
+        <div class="col-md-7 col-sm-12 text-white">
+            <h6>
+                WELCOME TO DR ~DOPE!
+            </h6>
+            <h1>
+                WE SAY NOPE TO DOPE!
+            </h1>
+            <p>The aim of our website is to promote anti-doping education and awareness as a cornerstone to the fight against doping in sports.
+
+            </p>
+            <button class="btn btn-light px-5 py-2 primary-btn">
+                Know about us!
+
+            </button>
+        </div>
+        <div class="col-md-5 col-sm-12 h-25">
+            <img src="../static/images/96063010-runner-athlete-sprint-start-explosive-run-vector-illustration-removebg-preview.png"
+                alt="sport + drugs">
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+<section class="section-2 container-fluid p-0">
+    <div class="cover">
+        <div class="overlay"></div>
+        <div class="content text-center">
+            <h1>Unique Features</h1>
+
+            <p>
+             You don't have to use multiple websites or applications to know the latest news about sports,TUE,doping,etc...</p>
+             <p>Our website and application are designed to save your golden time.
+            </p>
+        </div>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="numbers d-flex flex-md-row flex-wrap justify-content-center">
+            <div class="rect">
+                <h1>23434</h1>
+                <p>Healthy Sports Players</p>
+            </div>
+            <div class="rect">
+                <h1>3435</h1>
+                <p>Users</p>
+            </div>
+            <div class="rect">
+                <h1>
+                    3544
+                </h1>
+                <p>
+                    Subscribers
+                </p>
+            </div>
+            <div class="rect">
+                <h1>8789</h1>
+                <p>Experts to Support</p>
+            </div>
+        </div>
+    </div>
+
+
+    <section class="section-3 container-fluid p-0 text-center">
+        <div class="row">
+            <div class="col-md-12 col-sm-12">
+                <h1>Download Our App for ALL Devices</h1>
+                <p>We provide you the best application which is specially designed to work properly in any device.</p>
+
+            </div>
+
+            <div class="platform row">
+                <div class="col-md-6 col-sm-12 text-right">
+                    <div class="desktop shadow-lg">
+                        <div class="d-flex flex-row justify-content-center">
+                            <i class="fa-solid fa-desktop fa-3x py-2 pr-3"></i>
+                            <div class="text text-left">
+                                <h3 class="pt-1 m-0">
+                                    Desktop
+                                </h3>
+                                <p class="p-0 m-0">
+                                    On website
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="col-md-6 col-sm-12 text-left">
+                    <div class="desktop shadow-lg">
+                        <div class="d-flex flex-row justify-content-center">
+                            <i class="fa-solid fa-mobile-screen fa-3x py-2 pr-3"></i>
+                            <div class="text text-left">
+                                <h3 class="pt-1 m-0">
+                                    Mobile
+                                </h3>
+                                <p class="p-0 m-0">
+                                    Play Store
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </section>
+
+    <section class="section-4">
+        <div class="container text-center">
+            <h1 class="text-dark">
+                Feedback from Users
+            </h1>
+            <p class="text-secondary">
+                Top comments in our FORUM.
+            </p>
+        </div>
+        <div class="team row">
+            <div class="col-md-4
+         text-center">
+                <div class="card  d-inline-block shadow-lg">
+                    <div class="card-img-top">
+                        <img src="../static/images/koli.png"
+                            class="img-fluid border-radius mx-auto d-block p-4 rounded-circle car_1" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Virat Kohli</h3>
+                        <p class="card-text">
+                            Virat Kohli (born 5 November 1988) is an Indian international cricketer and former
+                            captain of the India national cricket team. He plays for Delhi in domestic cricket
+                            and Royal Challengers Bangalore in the Indian Premier League as a right-handed
+                            batsman.
+                        </p>
+                        <p class="text-black">Indian Cricketer</p>
+                        <a href="#" class="text-secondary text-decoration-none">View More</a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div id="carouselExampleControls" class="carousel slide " data-ride="carousel">
+                    <div class="carousel-inner text-center">
+                        <div class="carousel-item active">
+                            <div class="card  d-inline-block shadow-lg text-center">
+                                <div class="card-img-top">
+                                    <img src="../static/images/mary.jpg"
+                                        class="img-fluid border-radius mx-auto d-block p-4 rounded-circle car_1"
+                                        alt="">
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Mary Kom</h3>
+                                    <p class="card-text">
+                                        Mangte Chungneijang Mary Kom OLY (born 24 November 1982) is an Indian
+                                        amateur boxer, politician, and incumbent Member of Parliament, Rajya
+                                        Sabha.She is the only woman to win the World Amateur Boxing Championship
+                                        six times.
+                                    </p>
+                                    <p class="text-black">Boxer</p>
+                                    <a href="#" class="text-secondary text-decoration-none">View More</a>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="card  d-inline-block shadow">
+                                <div class="card-img-top">
+                                    <img src="../static/images/sania.jpg"
+                                        class="img-fluid border-radius mx-auto d-block p-4 rounded-circle car_1"
+                                        alt="">
+
+                                </div>
+                                <div class="card-body">
+                                    <h3 class="card-title">Sania Mirza</h3>
+                                    <p class="card-text">
+                                        Sania Mirza ( born 15 November 1986) is an Indian professional tennis
+                                        player. A former doubles world No. 1, she has won six major titles –
+                                        three in women's doubles and three in mixed doubles
+                                    </p>
+                                    <p class="text-black">Tennis Player</p>
+                                    <a href="#" class="text-secondary text-decoration-none">View More</a>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4  text-center">
+                <div class="card d-inline-block shadow-lg">
+                    <div class="card-img-top">
+                        <img src="../static/images/sunil.png"
+                            class="img-fluid border-radius mx-auto d-block p-4 rounded-circle car_1" alt="">
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">Sunil Chhetri</h3>
+                        <p class="card-text">
+                            Sunil Chhetri (born 3 August 1984) is an Indian professional footballer who plays as
+                            a forward and captains both Indian Super League club Bengaluru and the India
+                            national team.
+                        </p>
+                        <p class="text-black">Footballer</p>
+                        <a href="#" class="text-secondary text-decoration-none">View More</a>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+{%endblock%}

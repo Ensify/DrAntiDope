@@ -1,0 +1,171 @@
+{% extends "base.html" %} {% set active_page ='aware' %} {% block css%}
+<style>
+  .jumbo-txt {
+    color: white;
+    font-size: 2em;
+  }
+
+  .thumbnail {
+    position: relative;
+    margin-bottom: 0;
+    border: 0;
+    border-color: transparent;
+  }
+
+  .caption {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    width: 100%;
+  }
+
+  .img {
+    width: 100%;
+    height: 30rem;
+  }
+
+  .footer {
+    margin-top: 5rem;
+    width: 100%;
+    height: 20rem;
+    background-color: #494cf3;
+  }
+
+  .back_text {
+    display: inline-block;
+    margin-top: 9rem;
+    margin-left: 32rem;
+    font-size: 4rem;
+    width: 48rem;
+    color: azure;
+    text-align: center;
+  }
+</style>
+{%endblock%} {% block content%}
+<div class="container-fluid mt-3 mx-0 back p-0">
+  <div id="box-search">
+    <div class="thumbnail text-center">
+      <img src="{{url_for('static',filename='images/ground.jpg')}}" alt="" width="100%" height="450px">
+      <div class="caption">
+        <p class="jumbo-txt">"{{quote}}"</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container mt-3">
+  <div class="row text-center mt-5 mb-5">
+    <div class="col-md-6">
+      <img class="" src="{{url_for('static',filename='images/tue.jpg')}}" width="80%" />
+    </div>
+    <div class="col-md-6 mt-5">
+      <br />
+      <h3 class="text-center">Tue</h3>
+      <p>
+        Knowledge about TUE is as important as knowing the the rules of your
+        game. TUE must be applied by the athletes to cure their illness if they
+        need to use medication from the WADA's prohibited list. The TUE is
+        designed to promote the integrity of sports and fair play amongst
+        athletes.
+      </p>
+      <a href="https://www.youtube.com/watch?v=dFbOMVDo0Ao" class="btn btn-outline-info" role="button"
+        target="_blank">View Explanation Video</a>
+    </div>
+  </div>
+  <div class="row text-center mb-5">
+    <!-- <div class="col-md-6">
+             <img class="" src="/wp-content/themes/creativeforces/images/majapic.jpg" width="250px">
+         </div> -->
+    <div class="col-md-6 mt-5">
+      <br />
+      <h3 class="text-center">Awareness Programmes</h3>
+      <p>
+        The goal of DrAntidope is to educate and avoid the use of drugs which
+        they might take knowingly or unknowingly. We focus on prevention and
+        guide athletes in right direction to reach great heights.
+      </p>
+      <a href="https://www.youtube.com/watch?v=dFbOMVDo0Ao" class="btn btn-outline-info" role="button"
+        target="_blank">View Explanation Video</a>
+    </div>
+    <div class="col-md-6">
+      <img class="" src="{{url_for('static',filename='images/camp.jpg')}}" width="80%" />
+    </div>
+  </div>
+
+  <div class="row text-center mb-5">
+    <div class="col-md-6">
+      <img class="" src="{{url_for('static',filename='images/penalty.jpg')}}" width="70%" />
+    </div>
+    <div class="col-md-6 mt-5">
+      <br />
+      <h3 class="text-center">Consequences Of Doping</h3>
+      <p>
+        A little bit of carelessness may lead to drastic consequences in the future, in the same way taking prohibited
+        substances without knowledge may some time lead to life time ban from the sport.
+      </p>
+      <a href="{{url_for('main.conseq')}}" class="btn btn-outline-info" role="button">View Punishments</a>
+    </div>
+  </div>
+  <div class="row text-center">
+    <div class="col-md-6">
+      <br /><br />
+      <h3 class="text-center">Awareness Quiz</h3>
+      <p>
+        This quiz is conducted to know the awareness level of young athletes about TUE and prohibited substances and to
+        promote the true spirit of sport.
+      </p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSepRBgBb5TpJwAH4FB919-49IDuBrsjUFOnp_-Mjd4LriaX2A/viewform?usp=sf_link"
+        class="btn btn-outline-info" role="button" target="_blank">Take The Quiz</a>
+    </div>
+    <div class="col-md-6">
+      <img src="{{url_for('static',filename='images/quiz.jpg')}}" width="75%" />
+    </div>
+  </div>
+</div>
+<div class="row">
+  <button type="button"
+    class="btn btn-primary display-2 p-3  text-decoration-none text-white col-1 fixed-bottom m-3 ms-auto bg-primary shadow rounded text-center "
+    data-bs-toggle="modal" data-bs-target="#shareModal">
+    Share
+  </button>
+</div>
+
+</div>
+
+<div class="modal fade" id="shareModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Share</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <li><a class="text-decoration-none list" href="https://www.facebook.com/sharer.php?u=http%3A%2F%2Flocalhost%3A5000%2Faware">Share on Facebook</a>
+        </li>
+        <li><a class="text-decoration-none list" href="https://twitter.com/intent/tweet?url=http%3A%2F%2Flocalhost%3A5000%2Faware">Share on Twitter</a>
+        </li>
+        <li><a class="text-decoration-none list" href="https://www.linkedin.com/sharing/share-offsite/&url=http%3A%2F%2Flocalhost%3A5000%2Faware">Share on
+            LinkedIn</a></li>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" onclick="myFunction()" class="btn btn-primary">Copy Link</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<script>
+  function myFunction() {
+    /* Get the text field */
+    var copyText = window.location.href ;
+  
+    /* Copy the text inside the text field */
+    navigator.clipboard.writeText(copyText);
+    
+    /* Alert the copied text */
+    alert("Copied! ");
+  }
+</script>
+
+{%endblock%}

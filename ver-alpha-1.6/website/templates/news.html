@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% set active_page ='news' %}
+
+{% block css%}
+<link rel="stylesheet" href="{{url_for('static',filename='news.css')}}">
+{%endblock%}
+
+
+{% block content%}
+
+<section class="w-100 p-4 " style="background-color: rgb(245, 245, 247)">
+
+    <div class="container">
+
+        <div class="container-fluid" >
+            <div class="scrolling-wrapper row flex-row flex-nowrap overflow-scroll">
+                {% for article in articles %}
+                <div class="col-md-12 col-lg-4 col-xl-4">
+                    <div class="card" style="max-height: 400px; overflow:hidden">
+                        <img src="{{article['urlToImage']}}"
+                            class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h4 class="card-title">{{article['title']}}</h4>
+                            <p class="card-text">{{article['description']}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+    
+        </div>
+
+
+        <div class="row">
+            <h2>Anti-Doping</h2>
+            <hr class="dropdown-divider">
+        </div>
+        <div class="row">
+            <iframe height="440" src="https://rss.app/embed/v1/carousel/t13KtKhmSYiTbhyo" frameborder="0"></iframe>
+        </div>
+        <div class="row">
+            <h2>TUE and Doping</h2>
+            <hr class="dropdown-divider">
+        </div>
+        <div class="row">
+            <iframe class="newsfeed-tue" src="https://rss.app/embed/v1/list/tO5rF6b2mYnIKw1u" frameborder="0"></iframe>
+        </div>
+    </div>
+
+</section>
+
+{%endblock%}
