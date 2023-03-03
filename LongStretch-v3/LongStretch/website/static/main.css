@@ -1,0 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+:root {
+  --secondary-color:#159CFD;
+}
+
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+}
+
+.hover-underline-animation:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: var(--secondary-color);
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+.sign-in:hover {
+  border: 2px solid black;
+  border-radius: 18px;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
+.expert-support {
+  box-sizing: border-box;
+}
+
+.expert-support:hover {
+  border: 2px solid var(--secondary-color);
+  border-radius: 18px;
+  background-color: white;
+  color: var(--secondary-color);
+}/*# sourceMappingURL=main.css.map */

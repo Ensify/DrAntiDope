@@ -1,0 +1,25 @@
+.img-effect-box {
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.hero-img {
+  position: absolute;
+  top: 140px;
+  left: 0;
+  width: 100%;
+  height: 700px;
+  -webkit-transform: scale(1, 1.2);
+          transform: scale(1, 1.2);
+  z-index: -1;
+}
+
+.hero-blur {
+  position: absolute;
+  top: 21.5em;
+  right: 0;
+  -webkit-transform: scale(1.6, 1.15);
+          transform: scale(1.6, 1.15);
+}
+/*# sourceMappingURL=home.css.map */

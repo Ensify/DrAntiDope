@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title%}Dr~Dope{%endblock%}</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="{{url_for('static',filename='main.css')}}">
+  {% block css%}{%endblock%}
+  <link rel="stylesheet" href="{{url_for('static',filename = 'drug-search.css')}}">
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  {% block css%}{%endblock%}
+
+</head>
+
+<body class="fs-5 flow-root">
+
+  <nav class="navbar navbar-expand-lg navbar-light p-3">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand">
+        <img src="{{url_for('static',filename='images/logo.svg')}}" height="30" alt="DrAntiDope">
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse ms-4" id="navbarCollapse">
+        <div class="navbar-nav">
+          <a href="/drugs"
+            class=" hover-underline-animation nav-item nav-link me-4 {{'active' if active_page=='drugs' else ''}}">Drugs</a>
+          <a href="/tue"
+            class=" hover-underline-animation nav-item nav-link me-4 {{'active' if active_page=='tue' else ''}}">TUE</a>
+          <a href="/aware"
+            class=" hover-underline-animation nav-item nav-link me-4 {{'active' if active_page=='aware' else ''}}">Awareness</a>
+          <a href="/news"
+            class=" hover-underline-animation nav-item nav-link me-4 {{'active' if active_page=='news' else ''}}">News</a>
+          <a href="/forum"
+            class=" hover-underline-animation nav-item nav-link {{'active' if active_page=='forum' else ''}}">Forum</a>
+        </div>
+        <div class="navbar-nav ms-auto">
+          {%if user.is_authenticated %}
+          <li class="nav-item dropdown me-4">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              {{user.username}}
+            </a>
+            <ul class="dropdown-menu shadow">
+              <li><a class="dropdown-item" href="/account">My Account</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/logout">Log out</a></li>
+            </ul>
+          </li>
+          {%else%}
+          <a href="/login" class=" nav-item nav-link me-4">Sign in</a>
+          {%endif%}
+          <!-- <a href="/login"></a><button type="button" class="nav-item btn btn-outline-primary">Expert Support</button></a> -->
+          <button type="button" class="btn btn-outline-primary px-1 py-1"><a href="/" class="nav-item nav-link">Expert
+              Support</a></button>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- alert flashes
+    {% with messages = get_flashed_messages(with_categories=true) %} 
+        {% if messages %}
+            {% for category, message in messages %}
+                {% if category =='error' %}
+                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% elif category =='success' %}
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% else %}
+                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                        <strong>{{message}}</strong>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        {% endif %} 
+    {% endwith %}
+
+
+    {% block content%}
+    {%endblock%} -->
+
+  <!-- component -->
+  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5"></div>
+  <div class="min-h-screen-10 bg-gray-100 flex justify-center ">
+    <div class="container mx-auto bg-indigo-500 rounded-lg p-14">
+      <form>
+        <h1 class="text-center font-bold text-white text-4xl">Find the perfect domain name</label>
+          <p class="mx-auto font-normal text-sm my-6 max-w-lg">Enter your select domain name and choose any
+            extension name in the next step (choose between .com, .online, .tech, .site, .net, and more)</p>
+          <div class="sm:flex items-center bg-white rounded-lg overflow-hidden px-2 py-1 justify-between">
+            <input class="text-base text-gray-400 flex-grow outline-none px-2 " type="text"
+              placeholder="Search your domain name" />
+            <div class="ms:flex items-center px-2 rounded-lg space-x-4 mx-auto ">
+              <select id="Com" class="text-base text-gray-800 outline-none border-2 px-4 py-2 rounded-lg">
+                <option value="com" selected>com</option>
+                <option value="net">net</option>
+                <option value="org">org</option>
+                <option value="io">io</option>
+              </select>
+              <button class="bg-indigo-500 text-white text-base rounded-lg px-4 py-2 font-thin">Search</button>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+  <!-- card 1 -->
+
+  <div class="container">
+    <div class="row m-6 ">
+      <div class="col-4 h-100 ">
+        <div class="row">
+          <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+            <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Card title</h5>
+            <p class="text-gray-700 text-base mb-4">
+              Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+            <button type="button"
+              class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View
+              more</button>
+          </div>
+        </div>
+        <div class="row">
+          <div class="block p-6 rounded-lg shadow-lg bg-white max-w-sm">
+            <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Card title</h5>
+            <p class="text-gray-700 text-base mb-4">
+              Some quick example text to build on the card title and make up the bulk of the card's
+              content.
+            </p>
+            <button type="button"
+              class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View
+              more</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-4">
+        <div class=" rounded-lg shadow-lg bg-white ">
+          <h5 class="text-gray-900 text-xl leading-tight font-medium mb-2">Card title</h5>
+          <p class="text-gray-700 text-base mb-4">
+            Some quick example text to build on the card title and make up the bulk of the card'sdswfsfSome quick example text to build on the card title and make up the bulk of the card'sdswfsfSome quick example text to build on the card title and make up the bulk of the card'sdswfsf
+            content.
+          </p>
+          <button type="button"
+            class=" inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">View
+            more</button>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
