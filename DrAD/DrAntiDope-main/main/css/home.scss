@@ -1,0 +1,39 @@
+section.hero{
+ clear: both;
+ .container{
+  position: relative;
+  display: block;
+ .img-effect-box{
+  position: relative;
+  .hero-img{
+   width: 100%;
+   height:600px;
+  }
+ }
+ .hero-text-container{
+  position: absolute;
+  right: 0;
+  bottom: 7px;
+  width: auto; 
+  height:60%;
+  background-color: rgba(0, 0, 0, 0.404);
+  .head-text{
+   color: white;
+   padding-right: 3.5rem;
+   font-size: 3rem;
+   font-weight: bold;
+   text-align: right;
+  }
+  ul{
+   list-style: none;
+   padding-right: 3.5rem;
+   li{
+    text-decoration: none;
+    color: white;
+    text-align: right;
+    padding-bottom: 1rem;
+   }
+  }
+ }
+ }
+}

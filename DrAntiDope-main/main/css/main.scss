@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root{
+    --secondary-color:#159CFD;
+}
+body{
+    margin: 0;
+    padding: 0;
+    font-size: 1.2rem;
+    font-family: 'Poppins';
+    color: black;
+}
+
+a {
+    text-decoration: none;
+    color:black;
+}
+
+
+.main-logo{
+    padding: 1.5em;
+    margin-top: -5px;
+    float: left;
+}
+
+.left-nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+        float: left;
+        padding: 1.5em;
+    }
+    float: left;
+}
+
+.right-nav ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li{
+        float: left;
+        padding: 1.5em;
+    }
+    float: right;
+}
+.navbar{
+    .container{
+        display: block;
+        background-color: blue;
+    }
+}
+
+.expert-support{
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+.cur-page{
+    font-weight: bold;
+}
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: var(--secondary-color);
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+
+.sign-in{
+    padding: 0 0.5em 0 0.5em;
+}
+
+
+.sign-in:hover{
+    border: 2px solid black;
+    border-radius: 18px;
+    background-color: var(--secondary-color);
+    padding: 0 0.5em 0 0.5em;
+    color: white;
+}
+
+.expert-support{
+    padding: 0 0.62em 0 0.63em;
+    box-sizing: border-box;
+}
+
+
+.expert-support:hover{
+    border: 2px solid var(--secondary-color);
+    border-radius: 18px;
+    background-color: white;
+    padding: 0 0.5em 0 0.5em;
+    color: var(--secondary-color);
+}
+
+@media screen {
+    
+}

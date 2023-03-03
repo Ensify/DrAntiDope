@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+:root{
+    --secondary-color:#159CFD;
+}
+
+
+.hover-underline-animation {
+    display: inline-block;
+    position: relative;
+}
+
+.hover-underline-animation:after {
+content: '';
+position: absolute;
+width: 100%;
+transform: scaleX(0);
+height: 2px;
+bottom: 0;
+left: 0;
+background-color: var(--secondary-color);
+transform-origin: bottom right;
+transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+transform: scaleX(1);
+transform-origin: bottom left;
+}
+
+
+
+.sign-in:hover{
+    border: 2px solid black;
+    border-radius: 18px;
+    background-color: var(--secondary-color);
+    //padding: 0 0.5em 0 0.5em;
+    color: white;
+}
+
+.expert-support{
+    //padding: 0 0.62em 0 0.63em;
+    box-sizing: border-box;
+}
+
+
+.expert-support:hover{
+    border: 2px solid var(--secondary-color);
+    border-radius: 18px;
+    background-color: white;
+    //padding: 0 0.5em 0 0.5em;
+    color: var(--secondary-color);
+}

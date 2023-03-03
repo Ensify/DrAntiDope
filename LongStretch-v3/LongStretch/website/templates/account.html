@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block title%}{{current_user.username}}{%endblock%}
+
+{% block content%}
+
+<div class="container bg-light p-3">
+    <div class="row">
+        <div class="col-2">
+            <img class="rounded-circle" src="{{img}}">
+        </div>
+        <div class="col-6 ms-auto align-items-middle">
+            <h3 class="align-right">{{current_user.username}}</h3>
+            <div class="row">{{current_user.email}}</div>
+        </div>
+    </div>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>AutoComplete</title>
+	<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>  
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js">
+	</script>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js">
+	</script>
+	
+	<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/themes/ui-lightness/jquery-ui.css"
+		rel="stylesheet" type="text/css" />
+		
+</head>
+<body>
+	<form action="/search" method="post"> 
+		<label for="search-list">Search By:</label>
+		<select name="search-list" id="search-list">
+		<option value="drug-name">Drug</option>
+		<option value="brand">Brand</option>
+		<option value="condition">Condition</option>
+
+		</select>
+
+
+
+        <input type="text" id="tags" name="search">
+
+        <button type="submit">Submit</button>
+
+
+    </form> 
+	
+	
+	<script>
+	$(document).ready (function () {  
+    $("select#search-list").change (function () {  
+        var mySelect = $("select#search-list").children("option:selected").val();  
+
+
+$( function() {
+	// var mySelect = $("select#search-list").children("option:selected").val();
+	console.log(mySelect)
+	if(mySelect==='brand'){
+		var availableTags = [
+		{% for b in brand %}
+			"{{b}}",
+		{% endfor %}
+	];
+	$( "#tags" ).autocomplete({
+	source: availableTags
+	});
+	}
+	if(mySelect==='drug-name'){
+		var availableTags = [
+		{% for drug in drugs %}
+			"{{drug}}",
+		{% endfor %}
+	];
+	$( "#tags" ).autocomplete({
+	source: availableTags
+	});
+	}
+	if(mySelect==='condition'){
+		var availableTags = [
+		{% for c in condition %}
+			"{{c}}",
+		{% endfor %}
+	];
+	$( "#tags" ).autocomplete({
+	source: availableTags
+	});
+	}
+	
+} );
+
+    });  
+});  
+</script>
+	
+</body>
+</html>

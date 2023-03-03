@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drug</title>
+    <style>
+        table, th, td {
+          border:1px solid blue;
+        }
+
+        </style>
+
+</head>
+<body>
+    <h1 >{{drug['drug']}}</h1>
+    <p>{{ drug }}</p>
+    
+    <!-- <p>
+        id            : {{ drug['_id'] }}<br>
+        Summary       : {{ drug['summary'] }}<br>
+        Brands        :{{ drug['brand_list'] }}<br>
+        Conditions    : {{ drug ['conditions'] }}<br>
+
+    </p> -->
+
+
+<table style="width:100%">
+    <tr>
+      <td>id</td>
+      <td>Summary</td>
+      <td>Brands</td>
+      <td>Conditions</td>
+    </tr>
+    <tr>
+      <td>{{ drug['_id'] }}</td>
+      
+      <td>{{ drug['summary'] }}</td>
+      <td>{% if drug['brand_list'] == "not avail" %}
+                not available 
+        {% else %}
+         {% for brand in drug['brand_list'] %}
+        <ul>{{ brand }}</ul>
+        {% endfor %}</td>
+        {% endif %}
+      <td>
+        <!-- <py-script> -->
+            
+        {% for condition in drug['conditions'][1] %}
+        <ul>{{ condition }}</ul>
+        {% endfor %}
+        <!-- if(drug['conditions'][1]==[]):
+            print("not available")
+        else:
+            for cond in drug['conditions'][1]:
+                print("cond\n") -->
+    <!-- </py-script> -->
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

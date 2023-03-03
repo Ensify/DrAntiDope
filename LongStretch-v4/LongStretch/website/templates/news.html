@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% set active_page ='news' %}
+
+{% block css%}
+<link rel="stylesheet" href="{{url_for('static',filename='news.css')}}">
+{%endblock%}
+
+
+{% block content%}
+
+<section class="w-100 p-4 " style="background-color: rgb(245, 245, 247)">
+
+    <div class="container">
+        <div class="row">
+            <h2>"Custom News"</h2>
+            <hr class="dropdown-divider">
+        </div>
+        <div class="row">
+            <iframe class="newsfeed-antidope" height="440"  src="https://rss.app/embed/v1/carousel/txiubBsJ79bhp2KT" frameborder="0"></iframe>
+        </div>
+
+        <div class="row">
+            <h2>Anti-Doping</h2>
+            <hr class="dropdown-divider">
+        </div>
+        <div class="row">
+            <iframe class="newsfeed-antidope" height="440"  src="https://rss.app/embed/v1/carousel/txiubBsJ79bhp2KT" frameborder="0"></iframe>
+        </div>
+        <div class="row">
+            <h2>TUE and Doping</h2>
+            <hr class="dropdown-divider">
+        </div>
+        <div class="row">
+            <iframe class="newsfeed-tue"src="https://rss.app/embed/v1/list/tO5rF6b2mYnIKw1u" frameborder="0"></iframe>
+        </div>
+    </div>
+
+</section>
+
+{%endblock%}

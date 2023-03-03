@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+
+{% block title%}{{page_user.username}}{%endblock%}
+
+{% block content%}
+
+<div class="container bg-light p-3">
+    <div class="row">
+        <div class="col-2">
+            <img class="rounded-circle" src="{{img}}">
+        </div>
+        <div class="col-6 ms-auto align-items-middle">
+            <h3 class="align-right">{{page_user.username}}</h3>
+            <div class="row">{{page_user.email}}</div>
+        </div>
+    </div>
+</div>
+
+<div class="container bg-light mt-3 p-3">
+    <div class="row p-3">
+        <h3>Posts</h3>
+        <hr class="divider">
+    </div>
+    <div class="row">
+        <div class="container">
+            {%for post in posts.items %}
+            <div class="row">
+                <article class="bg-white p-3 m-1 rounded">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-1">
+                                <img src="{{url_for('static',filename='images/profile_pic/'+post.author.profile_pic)}}"
+                                    alt="img" class="rounded-circle" style="width: 50px;">
+                            </div>
+                            <div class="col-12">
+                                <h3 class="">
+                                    <a class="link-dark text-decoration-none" href="{{url_for('posts.post', post_id=post.id)}}">{{post.title}}</a>
+                                    <a href="{{url_for('main.topic',topic=post.topic)}}" class="link-secondary text-decoration-none">-{{post.topic}}</a>
+                                </h3>
+                            </div>
+                            <div class="col-2 ">
+                                <a class="link-primary" style="text-decoration:none" href="#">{{post.author.username}}</a>
+                            </div>
+                            <div class="col-2 ms-auto">
+                                {{post.date_posted.strftime('%Y-%m-%d')}}
+                            </div>
+                        </div>
+                        <hr class="dropdown-divider">
+                        <div class="row">
+                            <p>{{post.content}}</p>
+                        </div>
+    
+                    </div>
+                </article>
+            </div>
+        {%endfor%}
+        </div>
+    </div>
+    <div class="container">
+        {% for page_num in posts.iter_pages(left_edge=1,right_edge=1, left_current=1,right_current=2) %}
+
+        {% if page_num %}
+            {% if posts.page == page_num %}
+                <a class="btn btn-info mb-4" href="{{url_for('users.account',page=page_num,username=page_user.username)}}">{{page_num}}</a>
+            {% else %}
+                <a class="btn btn-outline-info mb-4" href="{{url_for('users.account',page=page_num,username=page_user.username)}}">{{page_num}}</a>
+            {% endif %}
+        {% else %}
+        ...
+        {%endif%}
+
+        {%endfor%}
+    </div>
+</div>
+
+{%endblock%}

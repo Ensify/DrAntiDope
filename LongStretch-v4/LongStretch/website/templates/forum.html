@@ -1,0 +1,79 @@
+{% extends "base.html" %}
+{% set active_page ='forum' %}
+
+{% block content%}
+<div class="container">
+    <div class="row">
+        <div class="col-10">
+            <div class="container">
+                <div class="row">
+                    <h2>Posts</h2>
+                    <hr class="dropdown-divider">
+                </div>
+                {%for post in posts.items %}
+                <div class="row">
+                    <article class="bg-light p-4 m-1 rounded">
+                        <div class="container m-0 p-0">
+                            <div class="row">
+                                <div class="col-1">
+                                    <img src="{{url_for('static',filename='images/profile_pic/'+post.author.profile_pic)}}"
+                                        alt="img" class="rounded-circle" style="width: 50px;">
+                                </div>
+                                <div class="col-12">
+                                    <h3 class=""><a class="link-dark text-decoration-none"
+                                            href="{{url_for('views.post', post_id=post.id)}}">{{post.title}}</a></h3>
+                                </div>
+                                <div class="col-2 ">
+                                    <a class="link-primary" style="text-decoration:none"
+                                        href="{{url_for('views.account', username=post.author.username)}}">{{post.author.username}}</a>
+                                </div>
+                                <div class="col-2 ms-auto">
+                                    {{post.date_posted.strftime('%Y-%m-%d')}}
+                                </div>
+                            </div>
+                            <hr class="dropdown-divider">
+                            <div class="row">
+                                <p>{{post.content}}</p>
+                            </div>
+
+                        </div>
+                    </article>
+                </div>
+                {%endfor%}
+            </div>
+            <div class="container">
+                {% for page_num in posts.iter_pages(left_edge=1,right_edge=1, left_current=1,right_current=2) %}
+
+                {% if page_num %}
+                    {% if posts.page == page_num %}
+                        <a class="btn btn-info mb-4" href="{{url_for('views.forum',page=page_num)}}">{{page_num}}</a>
+                    {% else %}
+                        <a class="btn btn-outline-info mb-4" href="{{url_for('views.forum',page=page_num)}}">{{page_num}}</a>
+                    {% endif %}
+                {% else %}
+                ...
+                {%endif%}
+
+                {%endfor%}
+            </div>
+        </div>
+
+
+
+        <div class="col-2">
+            <a name="" id="" class="btn btn-primary" href="/post/new" role="button">Add Post</a>
+            <div class="container bg-light mt-3">
+
+                <div class="row">
+                    Popular Topics
+                    <hr class="divider">
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{%endblock%}
